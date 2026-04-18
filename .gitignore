@@ -23,3 +23,6 @@ dashboard.env
 *application-dev.yml
 application-dev.yml
 **/application-dev.yml
+.env.development
+**/.env.development
+**/.env.production
