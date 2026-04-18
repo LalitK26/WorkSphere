@@ -97,9 +97,9 @@ This project uses profile-based configuration (Dev/Prod). Sensitive credentials 
 ---
 
 ## 👤 Author
-**Lalit Suryawanshi**
+**Lalit Katkam**
 - GitHub: [@LalitK26](https://github.com/LalitK26)
 
 ---
 
-*Made with ❤️ for modern workforce efficiency.*
+
