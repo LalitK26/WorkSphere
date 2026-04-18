@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Notification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            display: block;
+            width: 140px;
+            max-width: 60%;
+            height: auto;
+            margin: 0 auto 10px auto;
+        }
+
+        .email-body {
+            padding: 40px 30px;
+            color: #333333;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 20px;
+        }
+
+        .notification-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .notification-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .notification-content {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .info-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .info-item {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #4b5563;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #1e3a8a;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3b82f6;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .email-footer {
+            background-color: #f9fafb;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-body {
+                padding: 30px 20px;
+            }
+
+            .email-header {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="{{logo_url}}" alt="{{company_name}} Logo" class="logo" />
+        </div>
+        <div class="email-body">
+            <div class="greeting">Dear {{candidate_name}},</div>
+
+            <div class="content">
+                <div class="notification-box" style="display: {{notification_subject_display}};">
+                    <div class="notification-title">{{notification_subject}}</div>
+                    <div class="notification-content">
+                        {{notification_message}}
+                    </div>
+                </div>
+                <div style="display: {{default_message_display}};">
+                    We have an important update regarding your application with {{company_name}}.
+                </div>
+            </div>
+
+            <div class="info-box" style="display: {{job_title_display}};">
+                <div class="info-item">
+                    <span class="info-label">Position:</span>
+                    <span>{{job_title}}</span>
+                </div>
+                <div class="info-item" style="display: {{application_status_display}};">
+                    <span class="info-label">Status:</span>
+                    <span>{{application_status}}</span>
+                </div>
+            </div>
+
+            <div class="content">
+                <div style="display: {{additional_info_display}};">
+                    {{additional_info}}
+                </div>
+                <div style="display: {{default_info_display}};">
+                    Please log in to your candidate portal to view more details and take any necessary actions.
+                </div>
+            </div>
+
+            <div style="text-align: center; display: {{action_url_display}};">
+                <a href="{{action_url}}" class="button">{{action_button_text}}</a>
+            </div>
+
+            <div class="content" style="margin-top: 30px; font-size: 14px; color: #6b7280;">
+                Best regards,<br>
+                <strong>WorkSphere India Recruitment Team</strong><br>
+            </div>
+        </div>
+        <div class="email-footer">
+            <p>This is an automated message from {{company_name}}.</p>
+            <p style="margin-top: 15px;">
+                <a href="https://worksphere.ltd" class="footer-link">Visit our website</a> |
+                <a href="https://worksphere.ltd/contact" class="footer-link">Contact Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

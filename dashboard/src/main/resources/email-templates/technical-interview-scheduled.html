@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Interview Scheduled</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            display: block;
+            width: 140px;
+            max-width: 60%;
+            height: auto;
+            margin: 0 auto 10px auto;
+        }
+
+        .email-body {
+            padding: 40px 30px;
+            color: #333333;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 20px;
+        }
+
+        .interview-details {
+            background-color: #eff6ff;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            margin: 12px 0;
+            align-items: flex-start;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #1e3a8a;
+            min-width: 120px;
+            font-size: 15px;
+        }
+
+        .detail-value {
+            color: #333333;
+            font-size: 15px;
+            flex: 1;
+        }
+
+        .highlight-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3b82f6;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .meet-link {
+            background-color: #10b981;
+            color: #ffffff !important;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 5px;
+            display: inline-block;
+        }
+
+        .email-footer {
+            background-color: #f9fafb;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-body {
+                padding: 30px 20px;
+            }
+
+            .email-header {
+                padding: 20px 15px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+            }
+
+            .detail-label {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="{{logo_url}}" alt="{{company_name}} Logo" class="logo" />
+        </div>
+        <div class="email-body">
+            <div class="greeting">Dear {{candidate_name}},</div>
+
+            <div class="content">
+                We have scheduled a <strong>Technical Interview</strong> regarding your application for the
+                <strong>{{job_title}}</strong> position at {{company_name}}.
+            </div>
+
+            <div class="content">
+                Please find the interview details below:
+            </div>
+
+            <div class="interview-details">
+                <div class="detail-row">
+                    <div class="detail-label">Position:</div>
+                    <div class="detail-value">{{job_title}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Interview Date:</div>
+                    <div class="detail-value">{{interview_date}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Interview Time:</div>
+                    <div class="detail-value">{{interview_time}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Interviewer:</div>
+                    <div class="detail-value">{{interviewer_name}}</div>
+                </div>
+                <div class="detail-row" style="display: {{interview_round_display}};">
+                    <div class="detail-label">Interview Type:</div>
+                    <div class="detail-value">{{interview_round}}</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Preparation Guidelines:</strong><br>
+                • Review the job description and required skills<br>
+                • Be prepared to discuss your past projects and problem-solving approach<br>
+                • Ensure a quiet environment with a stable internet connection<br>
+                • Have your resume and supporting documents available
+            </div>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td align="center" style="padding: 10px 0;">
+                        <!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://recruitment.worksphere.ltd/login" style="height:48px;v-text-anchor:middle;width:180px;" arcsize="13%" strokecolor="#10b981" fillcolor="#10b981">
+                        <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Join Meeting</center>
+                        </v:roundrect>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                        <a href="https://recruitment.worksphere.ltd/login"
+                            style="display: inline-block; padding: 14px 35px; background-color: #10b981; color: #ffffff !important; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin: 5px;">Join
+                            Meeting</a>
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+            </table>
+
+            <div class="content">
+                If you need to reschedule, please contact us at the earliest convenience.
+            </div>
+
+            <div class="content" style="margin-top: 30px; font-size: 14px; color: #6b7280;">
+                Best regards,<br>
+                <strong>WorkSphere India Recruitment Team</strong><br>
+            </div>
+        </div>
+        <div class="email-footer">
+            <p>This is an automated message from {{company_name}}.</p>
+            <p style="margin-top: 15px;">
+                <a href="https://worksphere.ltd" class="footer-link">Visit our website</a> |
+                <a href="https://worksphere.ltd/contact" class="footer-link">Contact Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

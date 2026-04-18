@@ -1,0 +1,19 @@
+[Unit]
+Description=WorkSphere Dashboard API
+After=network.target
+
+[Service]
+User=dashboard
+Group=dashboard
+EnvironmentFile=/etc/dashboard/dashboard.env
+Environment="SPRING_PROFILES_ACTIVE=prod"
+WorkingDirectory=/opt/apps/dashboard-api
+# Use absolute file URL and let Spring load the prod YAML; env file provides secrets
+ExecStart=/usr/bin/java -Xms512m -Xmx1g -XX:+UseG1GC -jar /opt/apps/dashboard-api/dashboard.jar --spring.config.location=file:///etc/dashboard/application-prod.yml
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,174 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    # Connection pool settings for production
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        use_sql_comments: false
+        enable_lazy_load_no_trans: false
+        jdbc:
+          batch_size: 20
+          order_inserts: true
+          order_updates: true
+        cache:
+          use_second_level_cache: false
+          use_query_cache: false
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true  # Continue even if some tables already exist
+      schema-locations: classpath:schema.sql
+
+  servlet:
+    multipart:
+      # Enable multipart support (even though we use JSON, some endpoints might need this)
+      enabled: true
+      # Max file size (for direct multipart uploads)
+      max-file-size: 50MB
+      # Max request size (for multipart requests with multiple files)
+      max-request-size: 50MB
+      # File size threshold for writing to disk
+      file-size-threshold: 2KB
+
+  # Configure SMTP mail server (GoDaddy Secure Server)
+  mail:
+    host: smtpout.secureserver.net
+    port: 465
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          timeout: 5000
+          connectiontimeout: 5000
+          writetimeout: 5000
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000
+
+google:
+  maps:
+    api-key: ${GOOGLE_MAPS_API_KEY}
+
+file:
+  upload-dir: ${FILE_UPLOAD_DIR}
+
+server:
+  port: 8080
+  # Tomcat-specific settings for large requests
+  tomcat:
+    # Increase max HTTP request header size for large requests
+    max-http-request-header-size: 64KB
+    # Increase max HTTP form post size (for multipart/form-data)
+    max-http-form-post-size: 50MB
+    # Increase connection timeout for large file uploads (in milliseconds)
+    connection-timeout: 300000
+
+logging:
+  file:
+    path: ${LOG_PATH}
+  level:
+    com.dashboard.app: INFO
+    com.dashboard.app.service.RoleService: DEBUG
+    com.dashboard.app.controller.RoleController: DEBUG
+    com.dashboard.app.exception.GlobalExceptionHandler: ERROR
+    org.springframework.security: WARN
+    org.hibernate: WARN
+    root: WARN
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+cors:
+  # Production origins must be configured via CORS_ALLOWED_ORIGINS environment variable
+  allowed-origins: ${CORS_ALLOWED_ORIGINS}
+
+# WebRTC and WebSocket Configuration for Production
+webrtc:
+  # STUN servers (public Google STUN servers as fallback)
+  stun:
+    servers:
+      - stun:stun.l.google.com:19302
+      - stun:stun1.l.google.com:19302
+      - stun:stun2.l.google.com:19302
+  
+  # TURN server configuration (for NAT traversal)
+  turn:
+    enabled: ${WEBRTC_TURN_ENABLED}
+    url: ${WEBRTC_TURN_URL}
+    username: ${WEBRTC_TURN_USERNAME}
+    credential: ${WEBRTC_TURN_CREDENTIAL}
+    # TURN server protocol (udp, tcp, or both)
+    protocol: ${WEBRTC_TURN_PROTOCOL}
+  
+  # WebSocket configuration for signaling
+  websocket:
+    # Production WebSocket endpoint (will use WSS when behind HTTPS)
+    endpoint: ${WEBRTC_WS_ENDPOINT}
+    # Allowed origins for WebSocket connections
+    allowed-origins: ${WEBRTC_WS_ALLOWED_ORIGINS}
+    # Connection timeout in milliseconds
+    connection-timeout: ${WEBRTC_WS_CONNECTION_TIMEOUT}
+    # Message size limit (in bytes)
+    max-message-size: ${WEBRTC_WS_MAX_MESSAGE_SIZE}
+  
+  # Signaling server configuration
+  signaling:
+    # Maximum number of participants per meeting
+    max-participants: ${WEBRTC_MAX_PARTICIPANTS}
+    # Session timeout in milliseconds (30 minutes)
+    session-timeout: ${WEBRTC_SESSION_TIMEOUT}
+    # Enable message logging for debugging
+    enable-logging: ${WEBRTC_ENABLE_LOGGING}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  health:
+    mail:
+      enabled: false
+
+quickekyc:
+  api-key: ${QUICKEKYC_API_KEY}
+  base-url: ${QUICKEKYC_BASE_URL}
+
+app:
+  email:
+    logo-url: ${APP_EMAIL_LOGO_URL:}
+  dashboard:
+    portal-url: ${APP_DASHBOARD_PORTAL_URL:https://dashboard.worksphere.ltd}
+  recruitment:
+    portal-url: https://recruitment.worksphere.ltd
+    offer-base-url: https://recruitment.worksphere.ltd/api/recruitment/offers

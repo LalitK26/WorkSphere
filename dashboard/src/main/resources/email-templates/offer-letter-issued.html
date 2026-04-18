@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <title>Offer Letter Issued</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style type="text/css">
+        /* =========================================================
+           FIX #1: Reset styles for consistent rendering across clients
+           ========================================================= */
+        body,
+        table,
+        td,
+        p,
+        a,
+        li {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           FIX #2: Use auto table-layout instead of fixed
+           This prevents columns from being too narrow
+           ========================================================= */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* =========================================================
+           FIX #3: Proper cell styling without word-break
+           Using white-space: nowrap prevents date breaking
+           ========================================================= */
+        .detail-label {
+            color: #1e3a8a;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 10px 10px 0;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .detail-value {
+            color: #333333;
+            font-size: 15px;
+            padding: 10px 0;
+            vertical-align: top;
+            text-align: left;
+            /* FIX: Prevent dates from breaking vertically */
+            white-space: nowrap;
+        }
+
+        .highlight-value {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: #10b981;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+
+        .button-secondary {
+            background-color: #3b82f6;
+        }
+
+        .footer-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* =========================================================
+           FIX #4: Gmail-safe media queries
+           Note: Gmail strips <style> in non-embedded contexts,
+           so we use inline styles as primary, media query as enhancement
+           ========================================================= */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+
+            .email-body-cell {
+                padding: 25px 15px !important;
+            }
+
+            .header-cell {
+                padding: 20px 15px !important;
+            }
+
+            /* FIX #5: On mobile, allow natural wrapping for very long text only */
+            .detail-value {
+                white-space: normal !important;
+            }
+
+            .button {
+                display: block !important;
+                width: 100% !important;
+                margin: 10px 0 !important;
+                text-align: center !important;
+                box-sizing: border-box !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f5f5f5;">
+    <!-- =========================================================
+         FIX #6: Use 100% width wrapper table for proper centering
+         This is the email-safe way to center content
+         ========================================================= -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+        style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+
+                <!-- =========================================================
+                     FIX #7: Main container with max-width using both attribute and style
+                     Using 600px max-width for optimal readability
+                     ========================================================= -->
+                <table role="presentation" class="email-container" cellpadding="0" cellspacing="0" border="0"
+                    width="600"
+                    style="max-width: 600px; width: 100%; background-color: #ffffff; border-collapse: collapse;">
+
+                    <!-- Header Section -->
+                    <tr>
+                        <td class="header-cell" align="center"
+                            style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px 20px;">
+                            <!--[if mso]>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="background-color: #1e3a8a; padding: 30px 20px;" align="center">
+                            <![endif]-->
+                            <img src="{{logo_url}}" alt="{{company_name}} Logo" width="140"
+                                style="display: block; width: 140px; max-width: 60%; height: auto; margin: 0 auto;" />
+                            <!--[if mso]>
+                            </td></tr></table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+
+                    <!-- Body Section -->
+                    <tr>
+                        <td class="email-body-cell" style="padding: 40px 30px; color: #333333;">
+
+                            <!-- Greeting -->
+                            <p style="font-size: 18px; font-weight: 600; color: #1e3a8a; margin: 0 0 20px 0;">Dear
+                                {{candidate_name}},</p>
+
+                            <!-- Opening Message -->
+                            <p style="font-size: 16px; color: #555555; margin: 0 0 20px 0; line-height: 1.6;">
+                                We are pleased to offer you the position of <strong>{{job_title}}</strong> at
+                                {{company_name}}.
+                            </p>
+
+                            <p style="font-size: 16px; color: #555555; margin: 0 0 25px 0; line-height: 1.6;">
+                                After reviewing your qualifications and interview performance, we believe your skills
+                                and experience are an excellent match for our team.
+                            </p>
+
+                            <!-- =========================================================
+                                 FIX #8: Offer Details Box - Using nested table structure
+                                 Key fixes:
+                                 - Removed table-layout: fixed
+                                 - Using percentage widths that add up properly
+                                 - Added white-space: nowrap to prevent date breaking
+                                 ========================================================= -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="background-color: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; margin: 0 0 25px 0;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <!-- Inner details table -->
+                                        <table role="presentation" class="details-table" cellpadding="0" cellspacing="0"
+                                            border="0" width="100%" style="border-collapse: collapse;">
+
+                                            <!-- Position Row -->
+                                            <tr>
+                                                <td width="35%"
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top; text-align: left; width: 35%;">
+                                                    Position:</td>
+                                                <td width="65%"
+                                                    style="color: #10b981; font-weight: 600; font-size: 16px; padding: 10px 0; vertical-align: top; text-align: left; width: 65%;">
+                                                    {{job_title}}</td>
+                                            </tr>
+
+                                            <!-- Department Row -->
+                                            <tr>
+                                                <td width="35%"
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top; text-align: left; width: 35%;">
+                                                    Department:</td>
+                                                <td width="65%"
+                                                    style="color: #333333; font-size: 15px; padding: 10px 0; vertical-align: top; text-align: left; width: 65%;">
+                                                    {{department}}</td>
+                                            </tr>
+
+                                            <!-- Offer Date Row -->
+                                            <tr style="display: {{offer_date_display}}; mso-hide: all;">
+                                                <td width="35%"
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top; text-align: left; width: 35%;">
+                                                    Offer Date:</td>
+                                                <td width="65%"
+                                                    style="color: #333333; font-size: 15px; padding: 10px 0; vertical-align: top; text-align: left; white-space: nowrap; width: 65%;">
+                                                    {{offer_date}}</td>
+                                            </tr>
+
+                                            <!-- Expected Joining Date Row -->
+                                            <tr style="display: {{joining_date_display}}; mso-hide: all;">
+                                                <td width="35%"
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top; text-align: left; width: 35%;">
+                                                    Expected Joining Date:</td>
+                                                <td width="65%"
+                                                    style="color: #10b981; font-weight: 600; font-size: 16px; padding: 10px 0; vertical-align: top; text-align: left; white-space: nowrap; width: 65%;">
+                                                    {{joining_date}}</td>
+                                            </tr>
+
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Action Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="background-color: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px; margin: 0 0 25px 0;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <p style="margin: 0; font-size: 16px; color: #555555; line-height: 1.6;">
+                                            <strong>Important:</strong> Please review your official offer letter
+                                            document which contains detailed information regarding compensation,
+                                            benefits, and terms of employment. You can access it via your candidate
+                                            portal.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Closing Message -->
+                            <p style="font-size: 16px; color: #555555; margin: 0 0 25px 0; line-height: 1.6;">
+                                We look forward to welcoming you to the team. If you have any questions regarding the
+                                offer, please do not hesitate to contact us.
+                            </p>
+
+                            <!-- =========================================================
+                                 FIX #11: Button section using table for proper alignment
+                                 Works consistently across all email clients
+                                 ========================================================= -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding: 10px 0;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{offer_letter_url}}" style="height:48px;v-text-anchor:middle;width:180px;" arcsize="13%" strokecolor="#10b981" fillcolor="#10b981">
+                                        <w:anchorlock/>
+                                        <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">View Offer Letter</center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        <!--[if !mso]><!-->
+                                        <a href="{{offer_letter_url}}" class="button"
+                                            style="display: inline-block; padding: 14px 35px; background-color: #10b981; color: #ffffff !important; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin: 5px;">View
+                                            Offer Letter</a>
+                                        <!--<![endif]-->
+
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{portal_url}}" style="height:48px;v-text-anchor:middle;width:160px;" arcsize="13%" strokecolor="#3b82f6" fillcolor="#3b82f6">
+                                        <w:anchorlock/>
+                                        <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Access Portal</center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        <!--[if !mso]><!-->
+                                        <a href="{{portal_url}}" class="button button-secondary"
+                                            style="display: inline-block; padding: 14px 35px; background-color: #3b82f6; color: #ffffff !important; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin: 5px;">Access
+                                            Portal</a>
+                                        <!--<![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Signature -->
+                            <p style="font-size: 14px; color: #6b7280; margin: 30px 0 0 0; line-height: 1.6;">
+                                Best regards,<br>
+                                <strong>WorkSphere India Recruitment Team</strong>
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer Section -->
+                    <tr>
+                        <td
+                            style="background-color: #f9fafb; padding: 30px; text-align: center; font-size: 14px; color: #6b7280; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0 0 15px 0;">This is an automated message from {{company_name}}.</p>
+                            <p style="margin: 0;">
+                                <a href="https://worksphere.ltd" class="footer-link"
+                                    style="color: #3b82f6; text-decoration: none;">Visit our website</a>
+                                &nbsp;|&nbsp;
+                                <a href="https://worksphere.ltd/contact" class="footer-link"
+                                    style="color: #3b82f6; text-decoration: none;">Contact Support</a>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

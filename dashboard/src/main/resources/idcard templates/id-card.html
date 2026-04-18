@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+
+    .id-card {
+      margin: 0 auto;
+      width: 326px;
+      height: 504px;
+      position: relative;
+      background-image: url('Interns%20ID%20Cards.png');
+      background-size: 326px 504px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .photo-wrap {
+      position: absolute;
+      top: 10px;
+      left: 70px;
+      width: 180px;
+      height: 225px;
+      background: #e8eef2;
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .full-name {
+      position: absolute;
+      left: 16px;
+      top: 315px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.1;
+      max-width: 170px;
+    }
+
+    .details-row {
+      position: absolute;
+      left: 20px;
+      top: 378px;
+      width: 300px;
+      font-size: 8.8px;
+      font-weight: 600;
+      color: #0d1e40;
+    }
+
+    .emp-id {
+      position: absolute;
+      left: 115px;
+    }
+
+    .join-date {
+      position: absolute;
+      left: 215px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="id-card">
+    <div class="photo-wrap">
+      {{photoContent}}
+    </div>
+
+    <!-- Dynamic Fields Only -->
+    <div class="full-name">{{fullName}}</div>
+
+    <div class="details-row">
+      <span class="emp-id">{{employeeId}}</span>
+      <span class="join-date">{{joiningDateFormatted}}</span>
+    </div>
+
+    <!-- Footer Contact Info -->
+    <div
+      style="position: absolute; left: 210px; top: 417px; color: #ffffff; font-size: 8.5px; line-height: 1.2; font-weight: 500;">
+      <div
+        style="margin-bottom: 4px; font-weight: 600; font-size: 8px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">
+        For more info:</div>
+
+      <div style="margin-bottom: 2px;">
+        <img src="{{iconMail}}" width="9" height="9"
+          style="vertical-align: middle; margin-right: 6px; display: inline-block;" alt="E" />
+        <span style="vertical-align: middle;">support@worksphere.in</span>
+      </div>
+
+      <div style="margin-bottom: 2px;">
+        <img src="{{iconWeb}}" width="9" height="9"
+          style="vertical-align: middle; margin-right: 6px; display: inline-block;" alt="W" />
+        <span style="vertical-align: middle;">www.worksphere.in</span>
+      </div>
+
+      <div>
+        <img src="{{iconPhone}}" width="9" height="9"
+          style="vertical-align: middle; margin-right: 6px; display: inline-block;" alt="P" />
+        <span style="vertical-align: middle;">08048440559</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

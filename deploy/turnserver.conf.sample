@@ -1,0 +1,164 @@
+# coturn TURN Server Configuration
+# Copy to /etc/turnserver.conf on production server
+# Documentation: https://github.com/coturn/coturn/wiki
+
+# ====================
+# Basic Configuration
+# ====================
+
+# Listening port for TURN/STUN
+listening-port=3478
+
+# TLS listening port (optional, if you want to use TURNS)
+# tls-listening-port=5349
+
+# Listening IP address (0.0.0.0 for all interfaces)
+listening-ip=0.0.0.0
+
+# External IP address - REPLACE WITH YOUR SERVER'S PUBLIC IP
+# Find it with: curl ifconfig.me
+external-ip=YOUR_SERVER_PUBLIC_IP
+
+# Relay IP address (usually same as external IP)
+relay-ip=YOUR_SERVER_PUBLIC_IP
+
+# ====================
+# Realm and Authentication
+# ====================
+
+# Realm name for TURN authentication
+realm=recruitment.worksphere.ltd
+
+# Static user credentials
+# Format: username:password
+# IMPORTANT: Use the same credentials in:
+# - Backend: /etc/dashboard/dashboard.env
+# - Frontend: recruitment_frontend/.env.production
+user=worksphere_turn_user:CHANGE_THIS_TO_STRONG_PASSWORD
+
+# Use long-term credentials mechanism
+lt-cred-mech
+
+# ====================
+# Security
+# ====================
+
+# Use fingerprints in TURN messages
+fingerprint
+
+# Do not allow loopback peers
+no-loopback-peers
+
+# Deny access to private IP ranges (optional security measure)
+# Uncomment to block relay to local networks
+# denied-peer-ip=10.0.0.0-10.255.255.255
+# denied-peer-ip=192.168.0.0-192.168.255.255
+# denied-peer-ip=172.16.0.0-172.31.255.255
+
+# ====================
+# Performance
+# ====================
+
+# Maximum number of relay endpoints
+max-bps=500000
+
+# Total allocation quota
+total-quota=100
+
+# User allocation quota
+user-quota=10
+
+# ====================
+# Logging
+# ====================
+
+# Enable verbose logging (disable in production for performance)
+verbose
+
+# Log file location
+log-file=/var/log/turnserver/turnserver.log
+
+# Rotate logs
+# log-file=/var/log/turnserver/turnserver-%Y%m%d.log
+
+# Log to syslog instead
+# syslog
+
+# ====================
+# Server Identity
+# ====================
+
+# Server name
+server-name=recruitment.worksphere.ltd
+
+# Product name
+prod
+
+# ====================
+# Protocols and Ports
+# ====================
+
+# Support for UDP, TCP, and DTLS
+# UDP is default and most common
+
+# Relay port range (for actual media relay)
+# These ports must be open in firewall
+min-port=49152
+max-port=65535
+
+# Disable UDP relay endpoints (uncomment to use TCP only)
+# no-udp
+
+# Disable TCP relay endpoints (uncomment to use UDP only)
+# no-tcp
+
+# ====================
+# TLS/SSL Configuration (Optional)
+# ====================
+# Uncomment and configure if you want to use TURNS (TURN over TLS)
+
+# cert=/etc/letsencrypt/live/recruitment.worksphere.ltd/fullchain.pem
+# pkey=/etc/letsencrypt/live/recruitment.worksphere.ltd/privkey.pem
+
+# ====================
+# Database (Optional)
+# ====================
+# For dynamic user management, you can use a database
+# Default is static users configured above
+
+# userdb=/var/lib/turnserver/turndb
+# psql-userdb="host=localhost dbname=turn user=turn password=turn"
+# mysql-userdb="host=localhost dbname=turn user=turn password=turn"
+
+# ====================
+# Mobility
+# ====================
+
+# Mobility with ICE (MICE) support
+mobility
+
+# ====================
+# Statistics
+# ====================
+
+# CLI password for telnet management interface (optional)
+# cli-password=secure_cli_password
+
+# ====================
+# Miscellaneous
+# ====================
+
+# Disable software version in TURN messages (security)
+no-software-attribute
+
+# ====================
+# Debugging
+# ====================
+
+# Uncomment for extra verbose logging (development only)
+# Verbose
+
+# Monitor connections (shows active sessions)
+# web-admin
+# web-admin-ip=127.0.0.1
+# web-admin-port=8080

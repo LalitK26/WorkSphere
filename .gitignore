@@ -1,0 +1,22 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+hs_err_pid*.log
+
+# Editor directories
+.vscode/
+.idea/
+.metadata/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files with secrets
+dashboard.env
+*.env
+!*.env.sample

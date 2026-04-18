@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: dashboard
+  
+  # Auto-detect profile based on SPRING_PROFILES_ACTIVE or default to dev
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  
+  datasource:
+    # IMPORTANT: Create the database 'dashboard' in MySQL before running the application
+    # CREATE DATABASE dashboard;
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      leak-detection-threshold: 60000
+  
+  jpa:
+    # Using 'update' for dev, 'validate' for prod - overridden in profile-specific configs
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        globally_quoted_identifiers: true
+        jdbc:
+          time_zone: UTC
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+    defer-datasource-initialization: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+  
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=5m
+  
+  # SQL initialization - schema.sql will be executed on startup
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      schema-locations: classpath:schema.sql
+  
+  mail:
+    host: smtpout.secureserver.net
+    port: 465
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+app:
+  forgot-password:
+    otp-validity-minutes: 10
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+

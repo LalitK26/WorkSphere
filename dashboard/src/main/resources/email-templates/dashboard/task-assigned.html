@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <title>New Task Assigned</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style type="text/css">
+        body,
+        table,
+        td,
+        p,
+        a,
+        li {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .priority-high {
+            background-color: #ef4444;
+        }
+
+        .priority-medium {
+            background-color: #f59e0b;
+        }
+
+        .priority-low {
+            background-color: #10b981;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: #3b82f6;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .footer-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+
+            .email-body-cell {
+                padding: 25px 15px !important;
+            }
+
+            .header-cell {
+                padding: 20px 15px !important;
+            }
+
+            .button {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f5f5f5;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+        style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                <table role="presentation" class="email-container" cellpadding="0" cellspacing="0" border="0"
+                    width="600"
+                    style="max-width: 600px; width: 100%; background-color: #ffffff; border-collapse: collapse;">
+
+                    <!-- Header Section -->
+                    <tr>
+                        <td class="header-cell" align="center"
+                            style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px 20px;">
+                            <img src="{{logo_url}}" alt="{{company_name}} Logo" width="140"
+                                style="display: block; width: 140px; max-width: 60%; height: auto; margin: 0 auto;" />
+                        </td>
+                    </tr>
+
+                    <!-- Task Banner -->
+                    <tr>
+                        <td align="center" style="background-color: #3b82f6; padding: 15px 20px;">
+                            <span style="color: #ffffff; font-size: 18px; font-weight: 600;">Task Assignment
+                                Notification</span>
+                        </td>
+                    </tr>
+
+                    <!-- Body Section -->
+                    <tr>
+                        <td class="email-body-cell" style="padding: 40px 30px; color: #333333;">
+                            <p style="font-size: 18px; font-weight: 600; color: #1e3a8a; margin: 0 0 20px 0;">
+                                Dear {{employee_name}},
+                            </p>
+
+                            <p style="font-size: 16px; color: #555555; margin: 0 0 25px 0; line-height: 1.6;">
+                                A new task has been assigned to you. Please review the details below and commence work
+                                accordingly.
+                            </p>
+
+                            <!-- Task Details Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="background-color: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; margin: 0 0 25px 0;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+                                            width="100%">
+                                            <tr>
+                                                <td width="35%"
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Task:</td>
+                                                <td width="65%"
+                                                    style="color: #3b82f6; font-weight: 600; font-size: 16px; padding: 10px 0; vertical-align: top;">
+                                                    {{task_title}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Task Code:</td>
+                                                <td
+                                                    style="color: #333333; font-size: 15px; padding: 10px 0; vertical-align: top;">
+                                                    {{task_code}}</td>
+                                            </tr>
+                                            <tr style="display: {{project_display}};">
+                                                <td
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Project:</td>
+                                                <td
+                                                    style="color: #333333; font-size: 15px; padding: 10px 0; vertical-align: top;">
+                                                    {{project_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Priority:</td>
+                                                <td style="padding: 10px 0; vertical-align: top;">
+                                                    <span class="{{priority_class}}"
+                                                        style="display: inline-block; padding: 4px 12px; border-radius: 12px; color: #ffffff; font-size: 13px; font-weight: 600;">
+                                                        {{priority}}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: {{due_date_display}};">
+                                                <td
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Due Date:</td>
+                                                <td
+                                                    style="color: #ef4444; font-weight: 600; font-size: 15px; padding: 10px 0; vertical-align: top;">
+                                                    {{due_date}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="color: #1e3a8a; font-weight: 600; font-size: 15px; padding: 10px 10px 10px 0; vertical-align: top;">
+                                                    Assigned By:</td>
+                                                <td
+                                                    style="color: #333333; font-size: 15px; padding: 10px 0; vertical-align: top;">
+                                                    {{assigned_by}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Info Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+                                style="background-color: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px; margin: 0 0 25px 0;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <p style="margin: 0; font-size: 15px; color: #555555;">
+                                            <strong>Important:</strong> Please review the task details and update the
+                                            status as you progress. For any questions or clarifications, contact the
+                                            task assigner.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- CTA Button -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding: 10px 0;">
+                                        <a href="{{dashboard_link}}" class="button"
+                                            style="display: inline-block; padding: 14px 35px; background-color: #3b82f6; color: #ffffff !important; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">
+                                            View Task
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p style="font-size: 14px; color: #6b7280; margin: 30px 0 0 0; line-height: 1.6;">
+                                Best regards,<br>
+                                <strong>{{company_name}} Team</strong>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer Section -->
+                    <tr>
+                        <td
+                            style="background-color: #f9fafb; padding: 30px; text-align: center; font-size: 14px; color: #6b7280; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0 0 15px 0;">This is an automated message from {{company_name}}.</p>
+                            <p style="margin: 0;">
+                                <a href="{{company_website}}" class="footer-link"
+                                    style="color: #3b82f6; text-decoration: none;">Visit our website</a>
+                                &nbsp;|&nbsp;
+                                <a href="{{contact_url}}" class="footer-link"
+                                    style="color: #3b82f6; text-decoration: none;">Contact Support</a>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

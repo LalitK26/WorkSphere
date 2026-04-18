@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Offer Letter</title>
+    <style>
+        /* Reset &amp; Base */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.55;
+            color: #333;
+        }
+
+        /* A4 Container with Background Image */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 0;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            background-image: url('offer-bg.jpg');
+            background-size: 210mm 297mm;
+            background-repeat: no-repeat;
+            background-position: center center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+        }
+
+        /* Content Safe Area */
+        .content-safe-area {
+            /*
+      Safe-area padding ensures text never overlaps curved design elements
+      or the footer contact details.
+    */
+            padding: 58mm 25mm 90mm 25mm;
+            /* min-height: 170mm; */
+            min-height: auto;
+            box-sizing: border-box;
+        }
+
+        /* PAGE 1: shift Internship Offer Letter content slightly upward */
+        .page.page-1 .content-safe-area {
+            padding-top: 56mm;
+            /* push content slightly DOWN */
+            padding-bottom: 85mm;
+        }
+
+
+
+        /* --- Content Body --- */
+        .content {
+            padding: 0;
+            /*
+              Keep a readable text column (avoid edge-to-edge paragraphs),
+              while still honoring the safe-area padding.
+            */
+            max-width: 155mm;
+            margin: 0 auto;
+            box-sizing: border-box;
+            page-break-inside: auto;
+        }
+
+        .ref-date-row {
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10mm;
+        }
+
+        .ref-date-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .candidate-info {
+            width: auto;
+            float: none;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .candidate-name {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .company-ref {
+            text-align: right;
+            font-weight: bold;
+            float: none;
+            width: auto;
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+
+        .subject {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 4px 0 10px 0;
+            font-size: 11pt;
+        }
+
+        .body-text {
+            text-align: justify;
+            margin: 0 0 10px 0;
+            font-size: 10pt;
+        }
+
+        .body-text strong {
+            font-weight: bold;
+        }
+
+        .list-item {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 10pt;
+            text-align: justify;
+        }
+
+        /* Numbering */
+        .list-numbered {
+            counter-reset: simple-counter;
+            page-break-inside: avoid;
+        }
+
+        .list-item-numbered {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 10pt;
+            line-height: 1.3;
+            text-align: justify;
+            page-break-inside: avoid;
+        }
+
+        .list-item-numbered::before {
+            content: counter(simple-counter) ".";
+            counter-increment: simple-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: normal;
+        }
+
+        /* Manual numbering class - no auto-generated numbers */
+        .list-item-manual {
+            margin: 0 0 10px 0;
+            padding-left: 10mm;
+            position: relative;
+            font-size: 10pt;
+            text-align: justify;
+            page-break-inside: avoid;
+        }
+
+        .list-item-manual span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 7mm;
+            text-align: right;
+        }
+
+        /* --- Signatures --- */
+        .signature-section {
+            margin-top: 30px;
+            page-break-inside: avoid;
+        }
+
+        .signature-section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .company-sig {
+            width: 48%;
+            float: left;
+        }
+
+        .candidate-sig {
+            width: 48%;
+            float: right;
+            text-align: right;
+        }
+
+        .signature-label {
+            text-align: center;
+            margin-bottom: 6mm;
+        }
+
+        .signature-space {
+            height: 18mm;
+        }
+
+        .signature-line-centered {
+            width: 60mm;
+            border-top: 1px solid #000;
+            margin: 0 auto;
+        }
+
+        .sig-image {
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #000;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* --- Annexures --- */
+        .annexure-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            page-break-after: avoid;
+        }
+
+        /* Remove top margin from first element to ensure consistent page-top spacing */
+        .content>*:first-child {
+            margin-top: 0;
+        }
+
+        .content>.annexure-title:first-child {
+            margin-top: 0;
+        }
+
+        .content>.list-numbered:first-child {
+            margin-top: 0;
+        }
+
+        /* --- Helpers --- */
+        .bold {
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .justify {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGE 1 -->
+    <div class="page page-1">
+        <div class="content-safe-area">
+            <div class="content">
+                <div class="ref-date-row">
+                    <div class="candidate-info">
+                        <div class="candidate-name">{{candidate_name}}</div>
+                        <div>{{candidate_address}}</div>
+                    </div>
+                    <div class="company-ref">
+                        <div>TTI/IND/MH/PN/ITN/{{employee_id}}</div>
+                        <div>{{offer_date}}</div>
+                    </div>
+                </div>
+
+                <div class="subject">Internship Offer Letter</div>
+
+                <div class="body-text">
+                    Dear,
+                </div>
+                <div class="body-text">
+                    This letter is to offer you an employment as a <strong>{{job_title}}</strong> with {{company_name}}.
+                    This position will be based at {{company_name}}, Pune.
+                </div>
+                <div class="body-text">
+                    In this, you are not given any stipend during the first 2 months of basic training period, but in
+                    advanced training, you are given the following: Your compensation will be a monthly stipend
+                    <strong>of
+                        INR. {{stipend_amount}}</strong> during the Internship training Period. On successful completion
+                    of
+                    training and final evaluation process, you will be confirmed your regular employment and entitled
+                    for a
+                    salary of INR. <strong>{{ctc_amount}}</strong> per Annum.
+                </div>
+                <div class="body-text">
+                    From the start of the regular employment, you are expected to serve for a minimum period of One
+                    years'
+                    service with {{company_name}} and must sign a contract for the same at the time of joining.
+                </div>
+                <div class="body-text">
+                    We expect you to report to work <strong>on {{joining_date}} for the internship training.</strong>
+                </div>
+                <div class="body-text">
+                    Training Days &amp; hours during training period: 6 days a week Monday - Saturday, 6 working hours
+                    per
+                    day.
+                    Any kind of leave need to be pre-approved, consecutive 2 or more days absence without proper
+                    approval
+                    from the training may lead to termination of this offer at the discretion of the Company.
+                </div>
+
+                <div class="body-text"><strong>You agree and acknowledge that:</strong></div>
+
+                <div class="list-numbered">
+                    <div class="list-item-numbered">This letter, represents the entire understanding between you and the
+                        Company; and</div>
+                    <div class="list-item-numbered">No verbal or written terms, promises or representations that are not
+                        specifically stated in this offer, are/ will be not binding upon the Company; and</div>
+                    <div class="list-item-numbered">You will not dispute anything in future over this offer of
+                        Internship
+                        with the Company once accepted freely; and</div>
+                    <div class="list-item-numbered">You authorized the Company to have background verification done by
+                        any
+                        third party.</div>
+                    <div class="list-item-numbered">The company has never asked you to pay any amount for the
+                        internship.
+                    </div>
+                    <div class="list-item-numbered">The Company has never demanded any original certificates to be
+                        retained
+                        with the Company during the internship training.</div>
+                    <div class="list-item-numbered">You will be monitored continuously during the training program and
+                        will
+                        be exposed on all facets of development, testing and business analyst skills.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="content-safe-area">
+            <div class="content">
+                <div class="list-numbered" style="counter-reset: simple-counter 7;">
+                    <div class="list-item-numbered">You need to qualify and clear the weekly/Biweekly evaluation
+                        methodology
+                        adopted by your trainers/mentors.</div>
+                    <div class="list-item-numbered">You should also abide by the business code of conduct,
+                        confidentiality,
+                        and other applicable policies similar to employees of the Company.</div>
+                    <div class="list-item-numbered">Employment as per this offer is subject to your being medically fit.
+                    </div>
+                    <div class="list-item-numbered">Any unlawful activities at the Company premises dealt with
+                        appropriate
+                        legal recourse.</div>
+                    <div class="list-item-numbered">On the day of joining, you are requested to contact Miss. Saumya
+                        working
+                        with us as Executive HR for completion of your joining formalities and induction. She could be
+                        contacted – hr@worksphere.ltd</div>
+                    <div class="list-item-numbered"><strong>On the day of joining, please bring the following with you
+                            (Original + 1 Photocopy):-</strong>
+                        <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+                            <li>Original copy of this Letter signed by you</li>
+                            <li>Proof of age (birth certificate/ class 10th certificate)</li>
+                            <li>Proof of highest and latest qualification</li>
+                            <li>Proof of Permanent Address (Any one- Telephone bill/ Electricity bill/ Bank statement/
+                                Ration card)</li>
+                            <li>PAN Card- (2 copies or duly filled Application for PAN)</li>
+                            <li>4 recent passport size photographs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="body-text" style="margin-top: 15px;">
+                    If you agree with the above terms and conditions, please indicate your acceptance by signing the
+                    second
+                    copy of this letter and return it to the team.
+                </div>
+                <div class="body-text">
+                    We congratulate you on your appointment and wish you a long and successful career with us. We look
+                    forward to having you in our team and are excited to jointly explore the opportunities that lie
+                    ahead of
+                    us.
+                </div>
+
+                <div class="signature-section">
+                    <div class="company-sig">
+                        <div class="body-text bold">Sincerely,<br />For {{company_name}}</div>
+                        <!-- Placeholder for signature image -->
+                        <div
+                            style="height: 50px; margin: 10px 0; font-family: 'Brush Script MT', cursive; font-size: 24px;">
+                            {{hr_name}}</div>
+                        <div class="bold">Authorized Representative</div>
+                        <div>{{hr_title_prefix}} {{hr_name}}</div>
+                        <div>{{hr_designation}}</div>
+                    </div>
+                    <div class="candidate-sig">
+                        <div class="body-text signature-label" style="font-size: 16px;">Signature</div>
+                        <div class="signature-space" style="height: 20px;"></div>
+                        <div class="signature-line-centered"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3 (ANNEXURE I) -->
+    <div class="page">
+        <div class="content-safe-area">
+            <div class="content">
+                <div class="annexure-title">ANNEXURE I</div>
+                <div class="annexure-title" style="margin-bottom: 30px; line-height: 1.3;">
+                    CONFIRMATION ON SHARING PERSONAL INFORMATION (AS REQUIRED UNDER INFORMATION TECHNOLOGY ACT, 2000)
+                </div>
+
+                <div class="body-text">
+                    I <strong>{{candidate_name}}</strong> confirm that I am voluntarily sharing my Personal Information
+                    with
+                    {{company_name}} ('WorkSphere') for the following purposes:
+                </div>
+                <div class="body-text" style="margin-left: 20px;">
+                    a. validating my curriculumvitae and retaining records on the same for any future
+                    reference/verification; b. processing my application for internship including background
+                    verification
+                    checks; c. Internship related actions including record keeping, processing training stipend and any
+                    action required in the context of my training with WorkSphere.
+                </div>
+                <div class="body-text">
+                    In this context, I also agree to the retention of such Personal Information by WorkSphere for any
+                    future
+                    reference / verification and authorize WorkSphere to transfer the same to a third party.
+                </div>
+                <div class="body-text">
+                    I understand that 'Personal Information' means any information, relating to me that is available
+                    with
+                    WorkSphere and is capable of identifying me.
+                </div>
+
+                <!-- SIGNATURE SECTION (COPIED FROM PAGE 2) -->
+                <div class="signature-section" style="margin-top: 50px;">
+                    <div class="company-sig">
+                        <div class="body-text bold">
+                            Sincerely,<br />
+                            For {{company_name}}
+                        </div>
+
+                        <div
+                            style="height: 50px; margin: 10px 0; font-family: 'Brush Script MT', cursive; font-size: 24px;">
+                            {{hr_name}}
+                        </div>
+
+                        <div class="bold">Authorized Representative</div>
+                        <div>{{hr_title_prefix}} {{hr_name}}</div>
+                        <div>{{hr_designation}}</div>
+                    </div>
+
+                    <div class="candidate-sig">
+                        <div class="body-text signature-label" style="font-size: 16px;">Signature</div>
+                        <div class="signature-space" style="height: 20px;"></div>
+                        <div class="signature-line-centered"></div>
+                    </div>
+                </div>
+                <!-- END SIGNATURE SECTION -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4 (ANNEXURE II) -->
+    <div class="page">
+        <div class="content-safe-area">
+            <div class="content">
+                <div class="annexure-title">ANNEXURE II</div>
+                <div class="annexure-title">CONFIDENTIALITY &amp; NON-DISCLOSURE AGREEMENT</div>
+
+                <div class="body-text">
+                    This non-disclosure agreement ("Agreement") is made on this the {{offer_date}} day of between
+                </div>
+                <div class="body-text">
+                    {{company_name}}, a Private limited Company incorporated under the Indian Companies Act, 1913, and
+                    existing
+                    under the Indian Companies Act, 1956, having its registered office at Trios, 1st floor, IndiaLand,
+                    Behind Grand Highstreet Mall, Hinjawadi Phase 1, Pune, (MAH) India 411057.
+                </div>
+                <div class="center bold" style="margin: 10px 0;">And</div>
+                <div class="body-text">
+                    {{candidate_name}} Residing at {{candidate_address}} Hereinafter referred to as "Intern" which
+                    expression shall mean and include his/her representatives in interest, assurers and guarantors).
+                </div>
+                <div class="bold" style="margin-bottom: 5px;">WHEREAS:</div>
+                <div class="body-text">
+                    The Intern has expressed his/her desire to be trained with {{company_name}} for a period of
+                    <strong>6
+                        Month's</strong> ("Internship Period");
+                </div>
+                <div class="body-text">
+                    WorkSphere has accepted the Intern's application subject to the Intern adhering to and complying with
+                    certain covenants governing his or her movement within WorkSphere premises, conduct, and other tasks
+                    whatsoever which they may be allotted from time;
+                </div>
+                <div class="body-text">
+                    During the term of the internship, the Intern may have access to certain information which may be
+                    proprietary and/or of confidential nature ("Confidential Information", as more particularly
+                    described
+                    below).
+                </div>
+                <div class="body-text">
+                    <strong>NOW THEREFORE</strong> in consideration of the Agreement herein by the parties hereto and
+                    such
+                    additional promises and understandings as are hereinafter set forth, the parties agree as follows:
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5 (ANNEXURE II - Clauses 1 to 7) -->
+    <div class="page">
+        <div class="content-safe-area">
+            <div class="content">
+                <div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">1.</span>
+                        For purposes of this Agreement, "Confidential Information "means, with respect to WorkSphere, any
+                        and
+                        all information in written, representational, electronic, verbal or other form that is disclosed
+                        to
+                        Intern by WorkSphere or which Intern becomes aware of in the course of the internship, including
+                        without limitation, information relating directly or indirectly to the present or potential
+                        business, operation or financial condition, pricing, legal cases pertaining WorkSphere, marketing
+                        plans or strategy, volumes, services rendered, customers’ and suppliers’ names or lists, any
+                        customer information, financial or technical or service matters or data of or relating to
+                        WorkSphere
+                        and any information identified as being proprietary and/or confidential and any information
+                        which
+                        might reasonably be presumed to be proprietary or confidential in nature, excluding any such
+                        information which (i) is known to the public (through no act or omission of Intern in violation
+                        of
+                        this Agreement); (ii) was known to Intern prior to its disclosure under this Agreement; or (iii)
+                        is
+                        required to be disclosed by governmental or judicial order, in which case Intern shall give
+                        WorkSphere prompt written notice, and use reasonable efforts to ensure that such disclosure is
+                        accorded confidential treatment and also to enable WorkSphere to seek a protective order or other
+                        appropriate remedy.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">2.</span>
+                        Nothing contained hereunder shall be construed as creating, conveying, transferring, granting or
+                        conferring by WorkSphere on Intern any rights, license or authority in or to the Confidential
+                        Information.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">3.</span>
+                        Intern agrees and undertakes that he/she shall not disclose or make available to any person
+                        (including the Institute) reproduce or transmit in any manner, or use (directly or indirectly)
+                        for
+                        his/her own benefit or the benefit of others, any Confidential Information, including without
+                        limitation, the use of the Confidential Information in any thesis or report required to be
+                        submitted
+                        by Intern under any course. Intern undertakes that he/she will not, without prior written
+                        consent of
+                        WorkSphere, use any Confidential Information in any of her future projects or presentations for
+                        any
+                        person, including the institute, nor shall he/she use any of the Confidential Information in
+                        his/her
+                        resumes or any application for prospective employment.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">4.</span>
+                        Intern shall use and/or protect the Confidential Information received by him/her with utmost
+                        degree
+                        of care and diligence.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">5.</span>
+                        Intern agrees that upon (i) termination/expiry of Internship Period, or (ii) at any time during
+                        its
+                        currency, or (iii) on Intern ceasing to be an Intern of WorkSphere, Intern shall promptly deliver
+                        to
+                        WorkSphere the Confidential Information and copies thereof in his/her possession or under his/her
+                        direct or indirect control, and shall destroy all memorandum, notes and other writings prepared
+                        by
+                        him/her or his/her subordinates based on the Confidential Information.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">6.</span>
+                        Intern acknowledges that the Confidential Information coming to his/her knowledge may relate to
+                        and/or have implications regarding the future strategies, plans, business activities, methods,
+                        processes and or information of WorkSphere or its affiliated companies which could afford third
+                        parties certain competitive and strategic advantage. Intern shall ensure that the use of such
+                        Confidential Information by the Intern shall not jeopardize or adversely affect in any manner
+                        such
+                        future strategies, plans, business activities, methods, processes, information, and/or
+                        competitive
+                        and strategic advantage of WorkSphere.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6 (ANNEXURE II CONTD - Clauses 8 to 12 & Signatures) -->
+    <div class="page">
+        <div class="content-safe-area">
+            <div class="content">
+                <div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">6.</span>
+                        The Intern acknowledges that the Confidential Information may relate to WorkSphere’s or its
+                        affiliates’ future strategies, plans, business activities, methods, processes, or information
+                        and may provide a competitive or strategic advantage. The Intern agrees to ensure that the use
+                        of such Confidential Information does not jeopardize or adversely affect WorkSphere’s interests
+                        in any manner.
+                    </div>
+
+                    <div class="list-numbered" style="counter-reset: simple-counter 8;"></div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">7.</span>
+                        Intern acknowledges the quantum of damages and/or losses that WorkSphere may suffer as a result
+                        of
+                        the breach of this Agreement by the Intern and therefore, agrees to indemnify and keep
+                        indemnified
+                        WorkSphere against all loss or damage, which WorkSphere may suffer as a result of any such breach.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">8.</span>
+                        Intern hereby acknowledges and agrees that in the event of a breach or threatened breach by
+                        Intern
+                        of the provisions of this Agreement, WorkSphere shall without prejudice to any of its rights
+                        under
+                        this Agreement or in law have the right to claim damages and shall also be entitled to
+                        injunctive
+                        relief against such breach or threatened breach by Intern.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">9.</span>
+                        No failure or delay by WorkSphere in exercising or enforcing any right, remedy or power hereunder
+                        shall operate as a waiver thereof, nor shall any single or partial exercise or enforcement of
+                        any
+                        right, remedy or power preclude any further exercise or enforcement thereof or the exercise of
+                        enforcement of any other right, remedy or power.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">10.</span>
+                        This Agreement will be governed exclusively by the laws of India and, jurisdiction shall be
+                        vested
+                        exclusively in the courts at Pune. This Agreement shall not be amended, assigned or transferred
+                        by
+                        either party without obtaining the written consent of WorkSphere.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">11.</span>
+                        The obligations of confidentiality shall survive the expiry or termination of the internship.
+                        Nothing in this Agreement is intended to confer any rights/remedies under or by reason of this
+                        Agreement on any third party.
+                    </div>
+                    <div class="list-item-manual" style="margin-bottom: 10px;">
+                        <span style="position: absolute; left: 0;">12.</span>
+                        If any term or provision of this Agreement is determined to be illegal, unenforceable, or
+                        invalid in
+                        whole or in part for any reason, such illegal, unenforceable, or invalid provisions or part(s)
+                        thereof shall be stricken from this Agreement and such provision shall not affect the legality,
+                        enforce-ability, or validity of the remainder of this Agreement.
+                    </div>
+                </div>
+
+                <div class="body-text" style="margin-top: 20px;">
+                    IN WITNESS WHEREOF the parties hereto have duly executed this Agreement as of the date and year
+                    written
+                    above
+                </div>
+
+                <div class="signature-section" style="margin-top: 10px; padding-bottom: 50px; padding-left: 20px;">
+
+                    <div class="company-sig">
+                        <div class="body-text bold" style="font-size: 14.5pt; margin-bottom: 4px;">For {{company_name}}
+                        </div>
+                        <div
+                            style="height: 41px; margin: 2px 0; font-family: 'Brush Script MT', cursive; font-size: 21px;">
+                            {{hr_name}}</div>
+                        <div class="bold" style="margin-top: -2px;">Authorized Representative</div>
+                        <div>{{hr_title_prefix}} {{hr_name}}</div>
+                        <div>{{hr_designation}}</div>
+                    </div>
+                    <div class="candidate-sig" style="padding-left: 30px;">
+                        <div class="body-text signature-label" style="font-size: 16px; margin-top: 6px;">
+                            Signature
+                        </div>
+                        <div class="signature-space" style="height: 20px;"></div>
+                        <div class="signature-line-centered"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
