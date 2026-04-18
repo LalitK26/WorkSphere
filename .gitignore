@@ -20,3 +20,4 @@ hs_err_pid*.log
 dashboard.env
 *.env
 !*.env.sample
+*application-dev.yml
