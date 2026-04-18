@@ -21,3 +21,5 @@ dashboard.env
 *.env
 !*.env.sample
 *application-dev.yml
+application-dev.yml
+**/application-dev.yml
