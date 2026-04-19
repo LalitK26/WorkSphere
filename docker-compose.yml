@@ -1,0 +1,60 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: worksphere-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: dashboard
+      MYSQL_ROOT_PASSWORD: StrongPassword@123
+      # Note: For production, use environment variables from a .env file
+    volumes:
+      - ./db_data:/var/lib/mysql
+      # Automatically run schema.sql if the database is fresh
+      - ./dashboard/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+    ports:
+      - "3307:3306"
+    networks:
+      - worksphere-network
+
+  backend:
+    build: 
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: worksphere-backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://db:3306/dashboard
+      DB_USERNAME: root
+      DB_PASSWORD: StrongPassword@123
+      MAIL_USERNAME: devotedsouls2024@gmail.com
+      MAIL_PASSWORD: Lalitk@0226
+      JWT_SECRET: ThisIsASuperSecretKeyThatIsAtLeast256BitsLongForWorkSphere
+      GOOGLE_MAPS_API_KEY: AIzaSyCK77sKlnN0GeBxTekWup4_oFj7xBH6ioI
+      FILE_UPLOAD_DIR: uploads
+      LOG_PATH: logs
+      CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:5173
+      WEBRTC_TURN_ENABLED: false
+      WEBRTC_TURN_URL: ""
+      WEBRTC_TURN_USERNAME: ""
+      WEBRTC_TURN_CREDENTIAL: ""
+      WEBRTC_TURN_PROTOCOL: udp
+      WEBRTC_WS_ENDPOINT: ws://localhost:8080/ws
+      WEBRTC_WS_ALLOWED_ORIGINS: "*"
+      WEBRTC_WS_CONNECTION_TIMEOUT: 60000
+      WEBRTC_WS_MAX_MESSAGE_SIZE: 65536
+      WEBRTC_MAX_PARTICIPANTS: 4
+      WEBRTC_SESSION_TIMEOUT: 1800000
+      WEBRTC_ENABLE_LOGGING: true
+      QUICKEKYC_API_KEY: 5682be91-07f3-4208-bc07-f0477e3a038b
+      QUICKEKYC_BASE_URL: https://api.quickekyc.com/api/v1
+    ports:
+      - "8080:8080"
+    networks:
+      - worksphere-network
+
+networks:
+  worksphere-network:
+    driver: bridge

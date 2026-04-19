@@ -48,7 +48,7 @@ spring:
 
   # Configure SMTP mail server (GoDaddy Secure Server)
   mail:
-    host: smtpout.secureserver.net
+    host: smtp.gmail.com
     port: 465
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}

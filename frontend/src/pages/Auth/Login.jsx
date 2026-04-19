@@ -2,8 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import logoImage from '../../assets/logo.jpeg';
-import brandingPanelImage from '../../assets/branding_panel.png';
 import whiteLogoImage from '../../assets/white_logo1.png';
 
 // Configurable UI text
@@ -243,41 +241,12 @@ const Login = () => {
       <div
         className="hidden lg:block w-1/2 h-full overflow-hidden relative"
         style={{
-          backgroundImage: `url(${brandingPanelImage})`,
+          backgroundImage: `url('/branding_panel.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Centered Content Container */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-8">
-          {/* White Square with Logo and Text */}
-          <div className=" p-6 mb-8 flex flex-col items-center">
-            <img
-              src={whiteLogoImage}
-              alt="WorkSphere Logo"
-              className="w-64 h-64 object-contain mb-4"
-            />
-            
-          </div>
-
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-            WorkSphere India
-          </h1>
-
-          {/* Tagline */}
-          <p className="text-lg text-gray-200 text-center font-light">
-            Your Workspace for Daily Operations
-          </p>
-
-          {/* Navigation Dots */}
-          <div className="flex gap-2 mt-12">
-            <div className="w-2 h-2 rounded-full border border-white opacity-50"></div>
-            <div className="w-2 h-2 rounded-full bg-white"></div>
-            <div className="w-2 h-2 rounded-full border border-white opacity-50"></div>
-          </div>
-        </div>
       </div>
 
       {/* Right Login Section */}
@@ -287,9 +256,9 @@ const Login = () => {
           {/* Card Header */}
           <div className="flex items-center gap-3 mb-8">
             <img
-              src={logoImage}
+              src={whiteLogoImage}
               alt="WorkSphere Logo"
-              className="h-8 w-8 object-contain"
+              className="h-8 w-8 object-contain bg-blue-600 rounded p-1"
             />
             <h1 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">
               {UI_TEXT.companyName}
