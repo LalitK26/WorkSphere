@@ -1,0 +1,80 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dashboard
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: devotedsouls2024@gmail.com
+    password: lpqb lmlb dwct wxvy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          timeout: 10000
+          connectiontimeout: 10000
+          writetimeout: 10000
+
+jwt:
+  secret: your-secret-key-should-be-at-least-256-bits-long-for-hs256-algorithm
+  expiration: 86400000
+
+google:
+  maps:
+    api-key: AIzaSyCK77sKlnN0GeBxTekWup4_oFj7xBH6ioI
+
+# File upload configuration
+file:
+  upload-dir: uploads
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.dashboard.app: DEBUG
+    com.dashboard.app.service.DashboardEmailService: DEBUG
+    com.dashboard.app.service.DashboardEmailTemplateService: DEBUG
+    org.springframework.mail: DEBUG
+    org.springframework.security: DEBUG
+    root: INFO
+
+# CORS configuration for development
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:5173,http://localhost:3001,http://192.168.1.11:3001
+
+# QuickeKYC API configuration
+quickekyc:
+  api-key: 5682be91-07f3-4208-bc07-f0477e3a038b
+  base-url: https://api.quickekyc.com/api/v1
+
+# App configuration for email
+app:
+  email:
+    logo-url: ""
+  dashboard:
+    portal-url: https://dashboard.worksphere.ltd
+  recruitment:
+    portal-url: http://localhost:3001

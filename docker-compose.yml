@@ -12,7 +12,7 @@ services:
       # Automatically run schema.sql if the database is fresh
       - ./dashboard/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - worksphere-network
 
@@ -30,7 +30,7 @@ services:
       DB_USERNAME: root
       DB_PASSWORD: StrongPassword@123
       MAIL_USERNAME: devotedsouls2024@gmail.com
-      MAIL_PASSWORD: Lalitk@0226
+      MAIL_PASSWORD: lpqb lmlb dwct wxvy
       JWT_SECRET: ThisIsASuperSecretKeyThatIsAtLeast256BitsLongForWorkSphere
       GOOGLE_MAPS_API_KEY: AIzaSyCK77sKlnN0GeBxTekWup4_oFj7xBH6ioI
       FILE_UPLOAD_DIR: uploads
